@@ -1,17 +1,22 @@
-## My Project
+# Amazon Nova Prompt Examples
 
-TODO: Fill this README out!
+We've curated some prompt examples for use with the Amazon Nova Foundation Models, ranging from content generation to textual and visual understanding.
+Feel free to use these as a starting point for your own projects when using Amazon Nova.
 
-Be sure to:
+## Contributing
 
-* Change the title in this README
-* Edit your repository description on GitHub
-
-## Security
-
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+We welcome community contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
-This library is licensed under the MIT-0 License. See the LICENSE file.
+This library is licensed under the MIT-0 License. See the [LICENSE](LICENSE) file.
+
+## 👏 Contributors
+
+Shout out to these awesome contributors:
+
+<a href="https://github.com/aws-samples/sample-amazon-nova-prompt-examples/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=aws-samples/sample-amazon-nova-prompt-examples" />
+</a>
+
 

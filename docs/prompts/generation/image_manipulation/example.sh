@@ -1,0 +1,23 @@
+aws bedrock-runtime invoke-model \
+  --model-id amazon.nova-canvas-v1:0 \
+  --body '{
+    "taskType": "TEXT_IMAGE",
+    "textToImageParams": {
+        "conditionImage": b64_img,
+        "controlMode": "CANNY_EDGE", 
+        "controlStrength": .7,
+        "text": "Transform this photograph into an artistic watercolor painting: A serene mountain lake at sunset, with tall pine trees reflecting in the still water. It should have soft flowing pigments with visible paper texture throughout, brush strokes on the water, delicate color bleeds and gradients, traditional watercolor technique with natural light and shadow transitions, controlled wet-on-wet effects, preserved highlights, professional art style, masterful brush strokes, vibrant yet realistic color palette, slight pigment granulation, subtle paper showing through thin washes, Andrew Wyeth meets William Turner quality, 8k resolution, artstation trending",
+        "negativeText": "sharp edges, photorealistic, digital art style"
+    },
+    "imageGenerationConfig": {
+        "numberOfImages": 1,
+        "quality": "premium",
+        "width": 1024,
+        "height": 768,
+        "cfgScale": 8.0,
+        "seed": 42
+    }
+  }' \
+  --accept "application/json" \
+  --content-type "application/json" \
+  --region us-west-2

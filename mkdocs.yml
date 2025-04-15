@@ -1,0 +1,56 @@
+site_name: Amazon Nova Prompt Library
+theme: 
+  name: material
+  features:
+    - content.code.copy
+    - content.tabs.link
+nav:
+  - Home: index.md
+  - Prompts:
+    - Generation:
+      - Agility Story: prompts/generation/agility_story/example.md
+      - Function Generator: prompts/generation/function_generator/example.md
+      - Creative Writing: prompts/generation/creative_writing/example.md
+      - Illustration: prompts/generation/illustration/example.md
+      - Image Manipulation: prompts/generation/image_manipulation/example.md
+    - Migrations:
+      - OpenAI Migration - Meeting Notes: prompts/migrations/oai_migration_meeting_notes/example.md
+    - Understanding:
+      - Analyze Answers: prompts/understanding/analyze_answers/example.md
+      - Analyze Comments: prompts/understanding/analyze_comments/example.md
+      - Bug Detector: prompts/understanding/bug_detector/example.md
+      - Citations: prompts/understanding/citations/example.md
+      - Code Clarifier: prompts/understanding/code_clarifier/example.md
+      - Complexity Analyzer: prompts/understanding/complexity_analyzer/example.md
+      - Data Organizer: prompts/understanding/data_organizer/example.md
+      - Explain Code: prompts/understanding/explain_code/example.md
+      - Git Helper: prompts/understanding/git_helper/example.md
+      - SQL Generation: prompts/understanding/sql_generation/example.md
+      - Structured JSON: prompts/understanding/structured_json/example.md
+repo_url: https://github.com/aws-samples/sample-amazon-nova-prompt-examples
+repo_name: aws-samples/sample-amazon-nova-prompt-examples
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+  # - mkdocs-click
+plugins:
+  - tags
+  - search
+extra:
+  analytics:
+    provider: google
+    property: G-ACCOUNTID

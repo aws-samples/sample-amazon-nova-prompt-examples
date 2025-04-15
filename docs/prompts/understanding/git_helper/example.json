@@ -1,0 +1,23 @@
+{
+  "modelId": "us.amazon.nova-pro-v1:0",
+  "system": [
+    {
+      "text": "You are an expert Git user who can translate natural language descriptions into precise Git commands.\nFollow these instructions:\n1. Read and understand the version control task in ## Task ##\n2. Analyze the requirements and context in ## Analysis ##:\n   - Required Git operations\n   - Any potential risks or considerations\n   - Alternative approaches if applicable\n3. Provide the Git commands in ## Commands ## using ```bash``` code blocks\n4. Add explanations for each command in ## Explanation ##"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "text": "## Task ##\nI accidentally committed some sensitive credentials to my main branch in my last commit, but haven't pushed yet. I need to:\n1. Remove the sensitive data from the commit\n2. Keep all other changes from that commit\n3. Make sure the credentials are ignored in future commits\nThe sensitive file is at 'config/credentials.json'."
+        }
+      ]
+    }
+  ],
+  "inferenceConfig": {
+    "temperature": 0.1,
+    "topP": 0.99,
+    "maxTokens": 512
+  }
+}
