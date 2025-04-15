@@ -40,7 +40,7 @@ Here we'll use a [cookbook](https://d3n8a8pro7vhmx.cloudfront.net/foodday/pages/
     </question>
 
 
-### Amazon Nova Canvas Sample Response
+### Amazon Nova Lite Sample Response
 !!! success "Response"
     ```json
     --8<-- "results/citations_20250402_160116.md"
