@@ -1,5 +1,4 @@
 site_name: Amazon Nova Prompt Library
-site_url: https://aws-samples.github.io/sample-amazon-nova-prompt-examples/
 theme: 
   name: material
   features:
