@@ -1,0 +1,23 @@
+aws bedrock-runtime converse \
+  --model-id "us.amazon.nova-pro-v1:0" \
+  --system '[
+    {
+      "text": "You are an expert at reading internet comments and characterizing their sentiments, praise, and criticisms.\n\nFollow these instructions:\n1. Read and analyze all comments\n2. Determine sentiment (positive/negative/neutral) for each\n3. Record reasons for each sentiment\n4. Rate overall sentiment (HATED to LOVED)\n5. List top 5 positives (15 words each)\n6. List top 5 negatives (15 words each)\n7. Provide 15-word summary through commenters'\'' eyes"
+    }
+  ]' \
+  --messages '[
+    {
+      "role": "user",
+      "content": [
+        {
+          "text": "Comments on a new programming tutorial video:\n\nUser1: \"Finally, a clear explanation of async/await! The diagrams really helped visualize the concepts.\"\n\nUser2: \"Too basic for experienced devs, but good for beginners I guess. Wish it covered more edge cases.\"\n\nUser3: \"Great examples and clear explanations. Would love to see more advanced topics in future videos!\"\n\nUser4: \"Audio quality could be better - had to turn up volume. Content is solid though.\"\n\nUser5: \"Meh, another JavaScript tutorial. Nothing we haven'\''t seen before.\"\n\nUser6: \"The step-by-step breakdown of promises was exactly what I needed. Subscribed!\""
+        }
+      ]
+    }
+  ]' \
+  --inference-config '{
+    "temperature": 0.1,
+    "topP": 0.99,
+    "maxTokens": 1024
+  }' \
+  --region us-west-2

@@ -1,0 +1,23 @@
+aws bedrock-runtime converse \
+  --model-id "us.amazon.nova-pro-v1:0" \
+  --system '[
+    {
+      "text": "You are an expert SQL developer who can convert natural language descriptions into precise SQL queries.\nFollow these instructions:\n1. Read and understand the natural language request in ## Request ##. Think step by step about the tables and relationships involved.\n2. Put a 2-3 sentence explanation of what the query needs to do in ## Summary ##\n3. Write the SQL query that accomplishes this task in ## Query ## using ```sql``` code blocks\n4. Add helpful comments to explain key parts of the query"
+    }
+  ]' \
+  --messages '[
+    {
+      "role": "user",
+      "content": [
+        {
+          "text": "## Request ##\nShow me all customers who have made purchases over $1000 in the last 30 days, along with their total spend and number of orders. Sort by total spend descending."
+        }
+      ]
+    }
+  ]' \
+  --inference-config '{
+    "temperature": 0.1,
+    "topP": 0.99,
+    "maxTokens": 512
+  }' \
+  --region us-west-2

@@ -1,0 +1,23 @@
+{
+  "modelId": "us.amazon.nova-pro-v1:0",
+  "system": [
+    {
+      "text": "You are an expert algorithm analyst who specializes in determining the time and space complexity of code.\nFollow these instructions:\n1. Read and understand the code provided in ## Code ##\n2. Analyze the time complexity in ## Time Analysis ##:\n   - Overall Big O notation\n   - Breakdown of operations\n   - Best, average, and worst cases\n3. Analyze the space complexity in ## Space Analysis ##:\n   - Overall Big O notation\n   - Memory usage breakdown\n   - Any optimizations possible\n4. Provide recommendations in ## Recommendations ## if any improvements are possible"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "text": "## Code ##\ndef find_pairs_with_sum(arr, target_sum):\n    pairs = []\n    seen = set()\n    \n    for num in arr:\n        complement = target_sum - num\n        if complement in seen:\n            pairs.append((min(num, complement), max(num, complement)))\n        seen.add(num)\n        \n    return sorted(pairs)"
+        }
+      ]
+    }
+  ],
+  "inferenceConfig": {
+    "temperature": 0.1,
+    "topP": 0.99,
+    "maxTokens": 512
+  }
+}

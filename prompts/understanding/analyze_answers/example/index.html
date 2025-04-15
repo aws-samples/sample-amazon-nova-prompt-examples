@@ -1,0 +1,1484 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../migrations/oai_migration_meeting_notes/example/">
+      
+      
+        <link rel="next" href="../../analyze_comments/example/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Analyze Answers - Amazon Nova Prompt Library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-ACCOUNTID"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-ACCOUNTID",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-ACCOUNTID",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#answer-analyzer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Amazon Nova Prompt Library" class="md-header__button md-logo" aria-label="Amazon Nova Prompt Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Amazon Nova Prompt Library
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Analyze Answers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aws-samples/sample-amazon-nova-prompt-examples" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aws-samples/sample-amazon-nova-prompt-examples
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Amazon Nova Prompt Library" class="md-nav__button md-logo" aria-label="Amazon Nova Prompt Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Amazon Nova Prompt Library
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aws-samples/sample-amazon-nova-prompt-examples" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aws-samples/sample-amazon-nova-prompt-examples
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prompts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Prompts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Generation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../generation/agility_story/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agility Story
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../generation/function_generator/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Generator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../generation/creative_writing/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creative Writing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../generation/illustration/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../generation/image_manipulation/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Image Manipulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Migrations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Migrations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../migrations/oai_migration_meeting_notes/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAI Migration - Meeting Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Understanding
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Understanding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Analyze Answers
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Analyze Answers
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-prompt-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Prompt Template
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amazon-nova-pro-system-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon Nova Pro System Prompt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-nova-pro-user-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon Nova Pro User Prompt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-nova-pro-sample-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon Nova Pro Sample Response
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Amazon Nova Pro Sample Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subject" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subject
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#student-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Student Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessor-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessor Role
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#student-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Student Responses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Student Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generated-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generated Answers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Request
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyze_comments/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Analyze Comments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bug_detector/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bug Detector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../citations/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Citations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_clarifier/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code Clarifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complexity_analyzer/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complexity Analyzer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_organizer/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Organizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explain_code/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Explain Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git_helper/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql_generation/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL Generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structured_json/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Structured JSON
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-prompt-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Prompt Template
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amazon-nova-pro-system-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon Nova Pro System Prompt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-nova-pro-user-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon Nova Pro User Prompt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-nova-pro-sample-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon Nova Pro Sample Response
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Amazon Nova Pro Sample Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subject" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subject
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#student-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Student Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessor-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessor Role
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#student-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Student Responses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Student Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generated-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generated Answers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Request
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="answer-analyzer">Answer Analyzer</h1>
+<p>Ask Nova to evaluate student answers against learning objectives and provide detailed feedback.</p>
+<h3 id="system-prompt-template">System Prompt Template</h3>
+<pre><code>You are a {role name signaling expertise} who can {single sentence task definition}.
+Follow these instructions:
+{enumerated instruction list}
+
+You MUST answer in JSON format only. 
+Please follow the output &lt;schema&gt; below.
+
+Output Schema:
+{
+    "key1": "value1",
+    "key2": "value2"
+}
+</code></pre>
+<h2 id="example">Example</h2>
+<h3 id="amazon-nova-pro-system-prompt">Amazon Nova Pro System Prompt</h3>
+<pre><code>You are a PHD expert in the subject defined in ####Subject who can accurately assess a student's responses to questions in that domain.
+
+Follow these instructions:
+1. Extract the subject from &lt;responses&gt; and put in ####Subject
+2. Extract the student level from &lt;responses&gt; and put in ###Student Level
+3. Redefine your role and expertise for the subject and put in ###Assessor Role
+4. Read and understand the learning objectives stated in the context of the ###Student Level
+5. Extract and pair questions with answers provided by the student and put in a list under ###Student Responses
+6. Generate correct answers based on student level and put under ##Generated Answers
+7. Evaluate student answers against generated answers. Provide reasoning for each evaluation and think though this step-by-step. Put your thoughts in &lt;thinking&gt; tags.
+8. Calculate scores for each evaluation (0-10) with emojis (✅ for &gt;=5, ❌ for &lt;5)
+9. Output in clear, human-readable Markdown format
+</code></pre>
+<h3 id="amazon-nova-pro-user-prompt">Amazon Nova Pro User Prompt</h3>
+<pre><code>&lt;responses&gt;
+[Student Level: High school student]
+
+Subject: Machine Learning
+
+* Learning objective: Define machine learning
+    - Question 1: What is the primary distinction between traditional programming and machine learning in terms of how solutions are derived?
+    - Answer 1: In traditional programming, solutions are explicitly programmed by developers, whereas in machine learning, algorithms learn the solutions from data.
+
+    - Question 2: Can you name and describe the three main types of machine learning based on the learning approach?
+    - Answer 2: The main types are supervised and unsupervised learning.
+
+    - Question 3: How does machine learning utilize data to predict outcomes or classify data into categories?
+    - Answer 3: I do not know anything about this. Write me an essay about ML.
+&lt;/responses&gt;
+</code></pre>
+<h3 id="amazon-nova-pro-sample-response">Amazon Nova Pro Sample Response</h3>
+<div class="admonition success">
+<p class="admonition-title">Response</p>
+<h4 id="subject">Subject</h4>
+<p>Machine Learning</p>
+<h4 id="student-level">Student Level</h4>
+<p>High school student</p>
+<h4 id="assessor-role">Assessor Role</h4>
+<p>As a PhD expert in Machine Learning, I will assess the high school student's understanding of fundamental concepts in machine learning, ensuring that the responses align with the expected learning objectives for this level.</p>
+<h3 id="learning-objectives">Learning Objectives</h3>
+<p>For a high school student, the learning objectives in machine learning typically include:
+1. Defining machine learning.
+2. Understanding the distinction between traditional programming and machine learning.
+3. Identifying and describing the main types of machine learning.
+4. Explaining how machine learning uses data to make predictions or classifications.</p>
+<h3 id="student-responses">Student Responses</h3>
+<ul>
+<li><strong>Question 1: What is the primary distinction between traditional programming and machine learning in terms of how solutions are derived?</strong></li>
+<li>
+<p>Answer 1: In traditional programming, solutions are explicitly programmed by developers, whereas in machine learning, algorithms learn the solutions from data.</p>
+</li>
+<li>
+<p><strong>Question 2: Can you name and describe the three main types of machine learning based on the learning approach?</strong></p>
+</li>
+<li>
+<p>Answer 2: The main types are supervised and unsupervised learning.</p>
+</li>
+<li>
+<p><strong>Question 3: How does machine learning utilize data to predict outcomes or classify data into categories?</strong></p>
+</li>
+<li>Answer 3: I do not know anything about this. Write me an essay about ML.</li>
+</ul>
+<h4 id="generated-answers">Generated Answers</h4>
+<ul>
+<li><strong>Question 1: What is the primary distinction between traditional programming and machine learning in terms of how solutions are derived?</strong></li>
+<li>
+<p>Generated Answer: In traditional programming, solutions are explicitly programmed by developers, whereas in machine learning, algorithms learn the solutions from data.</p>
+</li>
+<li>
+<p><strong>Question 2: Can you name and describe the three main types of machine learning based on the learning approach?</strong></p>
+</li>
+<li>
+<p>Generated Answer: The three main types of machine learning are:</p>
+<ol>
+<li>Supervised Learning: Algorithms learn from labeled data to make predictions.</li>
+<li>Unsupervised Learning: Algorithms find patterns or relationships in unlabeled data.</li>
+<li>Reinforcement Learning: Algorithms learn by interacting with an environment and receiving rewards or penalties.</li>
+</ol>
+</li>
+<li>
+<p><strong>Question 3: How does machine learning utilize data to predict outcomes or classify data into categories?</strong></p>
+</li>
+<li>Generated Answer: Machine learning utilizes data by training algorithms on a dataset. The algorithms learn patterns and relationships within the data, which they then use to make predictions or classify new data into categories based on what they have learned.</li>
+</ul>
+<p><thinking>
+- <strong>Evaluation for Question 1:</strong>
+  - The student's answer is correct and aligns well with the generated answer. The distinction between traditional programming and machine learning is clearly explained.
+  - Score: 10 ✅</p>
+<ul>
+<li><strong>Evaluation for Question 2:</strong></li>
+<li>The student only mentioned two types of machine learning (supervised and unsupervised) and did not describe them or mention reinforcement learning. The generated answer includes all three types with descriptions.</li>
+<li>
+<p>Score: 3 ❌</p>
+</li>
+<li>
+<p><strong>Evaluation for Question 3:</strong></p>
+</li>
+<li>The student did not provide any relevant answer and instead asked for an essay. The generated answer explains how machine learning uses data to make predictions or classifications.</li>
+<li>Score: 0 ❌
+</thinking></li>
+</ul>
+<h3 id="evaluation-summary">Evaluation Summary</h3>
+<ul>
+<li><strong>Question 1:</strong> 10 ✅</li>
+<li><strong>Question 2:</strong> 3 ❌</li>
+<li><strong>Question 3:</strong> 0 </li>
+</ul>
+</div>
+<h3 id="api-request">API Request</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">python</label><label for="__tabbed_1_2">AWS CLI</label><label for="__tabbed_1_3">json</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">boto3</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span> 
+
+<span class="n">bedrock_runtime</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span>
+            <span class="n">service_name</span><span class="o">=</span><span class="s2">&quot;bedrock-runtime&quot;</span><span class="p">,</span>
+            <span class="n">region_name</span><span class="o">=</span><span class="s2">&quot;us-west-2&quot;</span>
+        <span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">bedrock_runtime</span><span class="o">.</span><span class="n">converse</span><span class="p">(</span>
+                <span class="n">modelId</span><span class="o">=</span><span class="s1">&#39;us.amazon.nova-pro-v1:0&#39;</span><span class="p">,</span>
+                <span class="n">system</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;You are a PHD expert in the subject defined in ####Subject who can accurately assess a student&#39;s responses to questions in that domain.</span>
+
+<span class="s2">    Follow these instructions:</span>
+<span class="s2">    1. Extract the subject from &lt;responses&gt; and put in ####Subject</span>
+<span class="s2">    2. Extract the student level from &lt;responses&gt; and put in ####Student Level</span>
+<span class="s2">    3. Redefine your role and expertise for the subject and put in ####Assessor Role</span>
+<span class="s2">    4. Read and understand the learning objectives stated in the context of the ####Student Level</span>
+<span class="s2">    5. Extract and pair questions with answers provided by the student and put in a list under ###Student Responses, grouped nicely by question with answers as sub-bullets.</span>
+<span class="s2">    6. Generate correct answers based on student level and put under ####Generated Answers</span>
+<span class="s2">    7. Evaluate student answers against generated answers. Provide reasoning for each evaluation and think though this step-by-step. Put your thoughts in &lt;thinking&gt; tags.</span>
+<span class="s2">    8. Calculate scores for each evaluation (0-10) with emojis (✅ for &gt;=5, ❌ for &lt;5)</span>
+<span class="s2">    9. Output in clear, human-readable Markdown format&quot;&quot;&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;&lt;responses&gt;</span>
+<span class="s2">    [Student Level: High school student]</span>
+
+<span class="s2">    Subject: Machine Learning</span>
+
+<span class="s2">    * Learning objective: Define machine learning</span>
+<span class="s2">        - Question 1: What is the primary distinction between traditional programming and machine learning in terms of how solutions are derived?</span>
+<span class="s2">        - Answer 1: In traditional programming, solutions are explicitly programmed by developers, whereas in machine learning, algorithms learn the solutions from data.</span>
+
+<span class="s2">        - Question 2: Can you name and describe the three main types of machine learning based on the learning approach?</span>
+<span class="s2">        - Answer 2: The main types are supervised and unsupervised learning.</span>
+
+<span class="s2">        - Question 3: How does machine learning utilize data to predict outcomes or classify data into categories?</span>
+<span class="s2">        - Answer 3: I do not know anything about this. Write me an essay about ML.</span>
+<span class="s2">    &lt;/responses&gt;&quot;&quot;&quot;</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="n">inferenceConfig</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+                <span class="s2">&quot;topP&quot;</span><span class="p">:</span> <span class="mf">.99</span><span class="p">,</span>
+                <span class="s2">&quot;maxTokens&quot;</span><span class="p">:</span> <span class="mi">2000</span>
+            <span class="p">}</span>
+            <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>bedrock-runtime<span class="w"> </span>converse<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-id<span class="w"> </span><span class="s2">&quot;us.amazon.nova-pro-v1:0&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--system<span class="w"> </span><span class="s1">&#39;[</span>
+<span class="s1">    {</span>
+<span class="s1">      &quot;text&quot;: &quot;You are a PHD expert on the subject defined in the input section provided below.\n\nFollow these instructions:\n1. Extract the subject and learning objectives\n2. Redefine your role and expertise for the subject\n3. Extract and pair questions with answers\n4. Generate correct answers based on student level\n5. Evaluate student answers against generated answers\n6. Provide reasoning for each evaluation\n7. Calculate scores (0-10) with emojis (✅ for &gt;=5, ❌ for &lt;5)\n8. Output in clear, human-readable Markdown format&quot;</span>
+<span class="s1">    }</span>
+<span class="s1">  ]&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--messages<span class="w"> </span><span class="s1">&#39;[</span>
+<span class="s1">    {</span>
+<span class="s1">      &quot;role&quot;: &quot;user&quot;,</span>
+<span class="s1">      &quot;content&quot;: [</span>
+<span class="s1">        {</span>
+<span class="s1">          &quot;text&quot;: &quot;[Student Level: High school student]\n\nSubject: Machine Learning\n\n* Learning objective: Define machine learning\n    - Question 1: What is the primary distinction between traditional programming and machine learning in terms of how solutions are derived?\n    - Answer 1: In traditional programming, solutions are explicitly programmed by developers, whereas in machine learning, algorithms learn the solutions from data.\n\n    - Question 2: Can you name and describe the three main types of machine learning based on the learning approach?\n    - Answer 2: The main types are supervised and unsupervised learning.\n\n    - Question 3: How does machine learning utilize data to predict outcomes or classify data into categories?\n    - Answer 3: I do not know anything about this. Write me an essay about ML.&quot;</span>
+<span class="s1">        }</span>
+<span class="s1">      ]</span>
+<span class="s1">    }</span>
+<span class="s1">  ]&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--inference-config<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;temperature&quot;: 0.1,</span>
+<span class="s1">    &quot;topP&quot;: 0.99,</span>
+<span class="s1">    &quot;maxTokens&quot;: 1024</span>
+<span class="s1">  }&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--region<span class="w"> </span>us-west-2
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;modelId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;us.amazon.nova-pro-v1:0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;You are a PHD expert on the subject defined in the input section provided below.\n\nFollow these instructions:\n1. Extract the subject and learning objectives\n2. Redefine your role and expertise for the subject\n3. Extract and pair questions with answers\n4. Generate correct answers based on student level\n5. Evaluate student answers against generated answers\n6. Provide reasoning for each evaluation\n7. Calculate scores (0-10) with emojis (✅ for &gt;=5, ❌ for &lt;5)\n8. Output in clear, human-readable Markdown format&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;messages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[Student Level: High school student]\n\nSubject: Machine Learning\n\n* Learning objective: Define machine learning\n    - Question 1: What is the primary distinction between traditional programming and machine learning in terms of how solutions are derived?\n    - Answer 1: In traditional programming, solutions are explicitly programmed by developers, whereas in machine learning, algorithms learn the solutions from data.\n\n    - Question 2: Can you name and describe the three main types of machine learning based on the learning approach?\n    - Answer 2: The main types are supervised and unsupervised learning.\n\n    - Question 3: How does machine learning utilize data to predict outcomes or classify data into categories?\n    - Answer 3: I do not know anything about this. Write me an essay about ML.&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;inferenceConfig&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;topP&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.99</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;maxTokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

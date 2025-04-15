@@ -1,0 +1,23 @@
+aws bedrock-runtime converse \
+  --model-id "us.amazon.nova-pro-v1:0" \
+  --system '[
+    {
+      "text": "You are an expert in the Agile framework. You deeply understand user story and acceptance criteria creation. You will be given a topic. Please write the appropriate information for what is requested.\n\nFollow these instructions:\n1. Read and understand the topic provided\n2. Write a user story following the format \"As a [role], I want [goal] so that [benefit]\"\n3. Write acceptance criteria following the format \"Given [context], when [action], then [expected result]\"\n4. Output the results in JSON format with Topic, Story, and Criteria fields"
+    }
+  ]' \
+  --messages '[
+    {
+      "role": "user",
+      "content": [
+        {
+          "text": "Topic: File Upload Feature"
+        }
+      ]
+    }
+  ]' \
+  --inference-config '{
+    "temperature": 0.1,
+    "topP": 0.99,
+    "maxTokens": 512
+  }' \
+  --region us-west-2
